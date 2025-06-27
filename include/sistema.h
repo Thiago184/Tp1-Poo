@@ -6,6 +6,8 @@
 #include "Aeronave.h"
 #include "Pessoa.h"
 #include "Voo.h"
+using namespace std;
+
 
 class Sistema {
 private:
@@ -40,5 +42,20 @@ public:
     Passageiro* buscarPassageiro(const string& cpf);
     Voo* buscarVoo(const string& codigo);
 };
+
+
+void cadastrarAeronave(vector<Aeronave>&);
+void cadastrarPiloto(vector<shared_ptr<Pessoa>>&);
+void cadastrarPassageiro(vector<shared_ptr<Pessoa>>&);
+void cadastrarVoo(vector<Aeronave>&, vector<shared_ptr<Pessoa>>&);
+void listarAeronaves(const vector<Aeronave>&);
+void listarPessoas(const vector<shared_ptr<Pessoa>>&);
+void listarVoos();
+void associarPassageiroAoVoo(vector<shared_ptr<Pessoa>>&);
+void listarPassageirosDoVoo();
+void salvarAeronaves(const vector<Aeronave>&, const string&);
+void salvarPessoas(const vector<shared_ptr<Pessoa>>&, const string&);
+void salvarVoosCSV();
+
 
 #endif

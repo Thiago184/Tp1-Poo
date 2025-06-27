@@ -78,39 +78,39 @@ void listarPessoas(const vector<shared_ptr<Pessoa>>& lista) {
     }
 }
 
-int main() {
-    vector<shared_ptr<Pessoa>> pessoas = carregarPessoas("pessoas.csv");
-    int opcao;
+// int main() {
+//     vector<shared_ptr<Pessoa>> pessoas = carregarPessoas("pessoas.csv");
+//     int opcao;
 
-    do {
-        cout << "\n=== Menu Pessoas ===\n";
-        cout << "1. Cadastrar Piloto\n";
-        cout << "2. Cadastrar Passageiro\n";
-        cout << "3. Listar Pessoas\n";
-        cout << "0. Sair\n";
-        cout << "Escolha: ";
-        cin >> opcao;
+//     do {
+//         cout << "\n=== Menu Pessoas ===\n";
+//         cout << "1. Cadastrar Piloto\n";
+//         cout << "2. Cadastrar Passageiro\n";
+//         cout << "3. Listar Pessoas\n";
+//         cout << "0. Sair\n";
+//         cout << "Escolha: ";
+//         cin >> opcao;
 
-        switch (opcao) {
-            case 1:
-                cadastrarPiloto(pessoas);
-                salvarPessoas(pessoas, "pessoas.csv");
-                break;
-            case 2:
-                cadastrarPassageiro(pessoas);
-                salvarPessoas(pessoas, "pessoas.csv");
-                break;
-            case 3:
-                listarPessoas(pessoas);
-                break;
-            case 0:
-                cout << "Encerrando...\n";
-                break;
-            default:
-                cout << "Opção inválida.\n";
-        }
+//         switch (opcao) {
+//             case 1:
+//                 cadastrarPiloto(pessoas);
+//                 salvarPessoas(pessoas, "pessoas.csv");
+//                 break;
+//             case 2:
+//                 cadastrarPassageiro(pessoas);
+//                 salvarPessoas(pessoas, "pessoas.csv");
+//                 break;
+//             case 3:
+//                 listarPessoas(pessoas);
+//                 break;
+//             case 0:
+//                 cout << "Encerrando...\n";
+//                 break;
+//             default:
+//                 cout << "Opção inválida.\n";
+//         }
 
-    } while (opcao != 0);
+//     } while (opcao != 0);
 
-    return 0;
-}
+//     return 0;
+// }

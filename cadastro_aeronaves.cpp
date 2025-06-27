@@ -3,6 +3,7 @@
 #include <vector>
 #include "include/aeronave.h"
 
+
 using namespace std;
 
 // Carrega aeronaves de arquivo CSV
@@ -73,34 +74,34 @@ void listarAeronaves(const vector<Aeronave>& lista) {
     }
 }
 
-int main() {
-    vector<Aeronave> aeronaves = carregarAeronaves("aeronaves.csv");
-    int opcao;
+// int main() {
+//     vector<Aeronave> aeronaves = carregarAeronaves("aeronaves.csv");
+//     int opcao;
 
-    do {
-        cout << "\n=== Menu Aeronaves ===\n";
-        cout << "1. Cadastrar nova aeronave\n";
-        cout << "2. Listar aeronaves\n";
-        cout << "0. Sair\n";
-        cout << "Escolha: ";
-        cin >> opcao;
+//     do {
+//         cout << "\n=== Menu Aeronaves ===\n";
+//         cout << "1. Cadastrar nova aeronave\n";
+//         cout << "2. Listar aeronaves\n";
+//         cout << "0. Sair\n";
+//         cout << "Escolha: ";
+//         cin >> opcao;
 
-        switch (opcao) {
-            case 1:
-                cadastrarAeronave(aeronaves);
-                salvarAeronaves(aeronaves, "aeronaves.csv");
-                break;
-            case 2:
-                listarAeronaves(aeronaves);
-                break;
-            case 0:
-                cout << "Saindo...\n";
-                break;
-            default:
-                cout << "Opção inválida!\n";
-        }
+//         switch (opcao) {
+//             case 1:
+//                 cadastrarAeronave(aeronaves);
+//                 salvarAeronaves(aeronaves, "aeronaves.csv");
+//                 break;
+//             case 2:
+//                 listarAeronaves(aeronaves);
+//                 break;
+//             case 0:
+//                 cout << "Saindo...\n";
+//                 break;
+//             default:
+//                 cout << "Opção inválida!\n";
+//         }
 
-    } while (opcao != 0);
+//     } while (opcao != 0);
 
-    return 0;
-}
+//     return 0;
+// }

@@ -21,6 +21,7 @@ double Piloto::getHorasVoo() const { return horasVoo; }
 void Piloto::setHorasVoo(double horas) { this->horasVoo = horas; }
 
 string Piloto::toCSV() const {
+    
     return "PILOTO," + nome + "," + matricula + "," + breve + "," + to_string(horasVoo);
 }
 

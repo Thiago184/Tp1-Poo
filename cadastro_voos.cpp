@@ -195,33 +195,33 @@ void listarPassageirosDoVoo() {
     }
 }
 
-int main() {
-    // Simulando carregamento:
-    vector<Aeronave> aeronaves = carregarAeronaves("aeronaves.csv");
-    vector<shared_ptr<Pessoa>> pessoas = carregarPessoas("pessoas.csv");
+// int main() {
+//     // Simulando carregamento:
+//     vector<Aeronave> aeronaves = carregarAeronaves("aeronaves.csv");
+//     vector<shared_ptr<Pessoa>> pessoas = carregarPessoas("pessoas.csv");
 
-    int opcao;
-    do {
-        cout << "\n=== Menu de Voos ===\n";
-        cout << "1. Cadastrar voo\n";
-        cout << "2. Listar voos\n";
-        cout << "3. Associar passageiro ao voo\n";
-        cout << "4. Salvar voos\n";
-        cout << "5. Listar passageiros de um voo\n";
-        cout << "0. Sair\n";
-        cout << "Escolha: ";
-        cin >> opcao;
+//     int opcao;
+//     do {
+//         cout << "\n=== Menu de Voos ===\n";
+//         cout << "1. Cadastrar voo\n";
+//         cout << "2. Listar voos\n";
+//         cout << "3. Associar passageiro ao voo\n";
+//         cout << "4. Salvar voos\n";
+//         cout << "5. Listar passageiros de um voo\n";
+//         cout << "0. Sair\n";
+//         cout << "Escolha: ";
+//         cin >> opcao;
 
-        switch (opcao) {
-            case 1: cadastrarVoo(aeronaves, pessoas); break;
-            case 2: listarVoos(); break;
-            case 3: associarPassageiroAoVoo(pessoas); break;
-            case 4: salvarVoosCSV(); break;
-            case 5: listarPassageirosDoVoo(); break;
-            case 0: break;
-            default: cout << "Opção inválida!\n";
-        }
-    } while (opcao != 0);
+//         switch (opcao) {
+//             case 1: cadastrarVoo(aeronaves, pessoas); break;
+//             case 2: listarVoos(); break;
+//             case 3: associarPassageiroAoVoo(pessoas); break;
+//             case 4: salvarVoosCSV(); break;
+//             case 5: listarPassageirosDoVoo(); break;
+//             case 0: break;
+//             default: cout << "Opção inválida!\n";
+//         }
+//     } while (opcao != 0);
 
-    return 0;
-}
+//     return 0;
+// }
