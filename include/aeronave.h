@@ -2,7 +2,7 @@
 #define AERONAVE_H
 using namespace std;
 
-
+#include <vector>
 #include <string>
 
 class Aeronave {
@@ -36,6 +36,15 @@ public:
     // Serialização para CSV
     string toCSV() const;
     static Aeronave fromCSV(const string& linha);
+
+    void cadastrarAeronave(vector<Aeronave>&);
+
+    void salvarAeronaves(const vector<Aeronave>&, const string&);
+
+    void listarAeronaves(const vector<Aeronave>&); 
+
 };
+
+vector<Aeronave> carregarAeronaves(const string& nomeArquivo);
 
 #endif

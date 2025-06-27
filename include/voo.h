@@ -65,6 +65,17 @@ public:
     static Voo fromCSV(const string& linha);
 
     void listarPassageiros() const;
+
+    void cadastrarVoo(vector<Aeronave>&, vector<shared_ptr<Pessoa>>&);
+
+    void listarVoos();
+
+    void associarPassageiroAoVoo(vector<shared_ptr<Pessoa>>&);
+
+    void listarPassageirosDoVoo();
+
 };
+
+void salvarVoosCSV();
 
 #endif

@@ -7,7 +7,6 @@
 #include "include/Voo.h"
 #include "include/Aeronave.h"
 #include "include/Pessoa.h"
-#include "include/utils.h"
 
 using namespace std;
 
@@ -36,7 +35,7 @@ Passageiro* encontrarPassageiro(vector<shared_ptr<Pessoa>>& pessoas, const strin
     return nullptr;
 }
 
-void cadastrarVoo(vector<Aeronave>& aeronaves, vector<shared_ptr<Pessoa>>& pessoas) {
+void Voo::cadastrarVoo(vector<Aeronave>& aeronaves, vector<shared_ptr<Pessoa>>& pessoas) {
     string codigo, origem, destino, hora, codAeronave, matricula1, matricula2;
     double distancia;
 
@@ -92,7 +91,7 @@ void salvarVoosCSV() {
     cout << "Voos salvos em voos.csv\n";
 }
 
-void listarVoos() {
+void Voo::listarVoos() {
     cout << "\n=== Lista de Voos ===\n";
     for (const auto& v : voos) {
         string horaSaida = v.getHoraSaida();
@@ -122,7 +121,7 @@ void listarVoos() {
     }
 }
 
-void associarPassageiroAoVoo(vector<shared_ptr<Pessoa>>& pessoas) {
+void Voo::associarPassageiroAoVoo(vector<shared_ptr<Pessoa>>& pessoas) {
     string codigoVoo, cpf;
     cout << "Código do voo: ";
     cin >> codigoVoo;
@@ -156,7 +155,7 @@ void associarPassageiroAoVoo(vector<shared_ptr<Pessoa>>& pessoas) {
     }
 }
 
-void listarPassageirosDoVoo() {
+void Voo::listarPassageirosDoVoo() {
     string codigoVoo;
     cout << "Código do voo: ";
     cin.ignore(); // Garante que o buffer está limpo
@@ -195,33 +194,3 @@ void listarPassageirosDoVoo() {
     }
 }
 
-// int main() {
-//     // Simulando carregamento:
-//     vector<Aeronave> aeronaves = carregarAeronaves("aeronaves.csv");
-//     vector<shared_ptr<Pessoa>> pessoas = carregarPessoas("pessoas.csv");
-
-//     int opcao;
-//     do {
-//         cout << "\n=== Menu de Voos ===\n";
-//         cout << "1. Cadastrar voo\n";
-//         cout << "2. Listar voos\n";
-//         cout << "3. Associar passageiro ao voo\n";
-//         cout << "4. Salvar voos\n";
-//         cout << "5. Listar passageiros de um voo\n";
-//         cout << "0. Sair\n";
-//         cout << "Escolha: ";
-//         cin >> opcao;
-
-//         switch (opcao) {
-//             case 1: cadastrarVoo(aeronaves, pessoas); break;
-//             case 2: listarVoos(); break;
-//             case 3: associarPassageiroAoVoo(pessoas); break;
-//             case 4: salvarVoosCSV(); break;
-//             case 5: listarPassageirosDoVoo(); break;
-//             case 0: break;
-//             default: cout << "Opção inválida!\n";
-//         }
-//     } while (opcao != 0);
-
-//     return 0;
-// }

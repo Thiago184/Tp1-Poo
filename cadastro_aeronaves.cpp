@@ -2,7 +2,7 @@
 #include <fstream>
 #include <vector>
 #include "include/aeronave.h"
-
+#include "include/voo.h"
 
 using namespace std;
 
@@ -21,7 +21,7 @@ vector<Aeronave> carregarAeronaves(const string& nomeArquivo) {
 }
 
 // Salva todas aeronaves no CSV
-void salvarAeronaves(const vector<Aeronave>& lista, const string& nomeArquivo) {
+void Aeronave::salvarAeronaves(const vector<Aeronave>& lista, const string& nomeArquivo) {
     ofstream arq(nomeArquivo);
 
     for (const Aeronave& a : lista) {
@@ -30,7 +30,7 @@ void salvarAeronaves(const vector<Aeronave>& lista, const string& nomeArquivo) {
 }
 
 // Cadastra nova aeronave via terminal
-void cadastrarAeronave(vector<Aeronave>& lista) {
+void Aeronave::cadastrarAeronave(vector<Aeronave>& lista) {
     string codigo, modelo;
     int capacidade;
     double velocidade, autonomia;
@@ -63,7 +63,7 @@ void cadastrarAeronave(vector<Aeronave>& lista) {
     cout << "Aeronave cadastrada com sucesso!\n";
 }
 
-void listarAeronaves(const vector<Aeronave>& lista) {
+void Aeronave::listarAeronaves(const vector<Aeronave>& lista) {
     cout << "\n=== Lista de Aeronaves ===\n";
     for (const auto& a : lista) {
         cout << "Código: " << a.getCodigo()

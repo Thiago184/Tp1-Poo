@@ -3,8 +3,8 @@
 #include <memory>
 #include "include/aeronave.h"
 #include "include/pessoa.h"
-#include "include/utils.h"
-#include "sistema.h"
+#include "include/voo.h"
+
 
 // Funções já implementadas nos arquivos de cadastro
 using namespace std;
@@ -12,6 +12,12 @@ using namespace std;
 int main() {
     vector<Aeronave> aeronaves = carregarAeronaves("aeronaves.csv");
     vector<shared_ptr<Pessoa>> pessoas = carregarPessoas("pessoas.csv");
+    //vector<Voo> voos = carregarVoos("voos.csv");
+    
+    Aeronave aeronave;
+    Piloto piloto;
+    Passageiro passageiro;
+    Voo voo;
 
     int opcao;
     do {
@@ -24,7 +30,8 @@ int main() {
         cout << "6. Listar voos\n";
         cout << "7. Listar passageiros de um voo\n";
         cout << "8. Gerar relatórios e estatísticas\n";
-        cout << "9. Sair\n";
+        cout << "9. Listar aeronaves\n";
+        cout << "10. Sair\n";
         cout << "==========================================\n";
         cout << "Escolha uma opção: ";
         cin >> opcao;
@@ -32,34 +39,37 @@ int main() {
 
         switch (opcao) {
             case 1:
-                cadastrarAeronave(aeronaves);
-                salvarAeronaves(aeronaves, "aeronaves.csv");
+                aeronave.cadastrarAeronave(aeronaves);
+                aeronave.salvarAeronaves(aeronaves, "aeronaves.csv");
                 break;
             case 2:
-                cadastrarPiloto(pessoas);
+                piloto.cadastrarPiloto(pessoas);
                 salvarPessoas(pessoas, "pessoas.csv");
                 break;
             case 3:
-                cadastrarPassageiro(pessoas);
+                passageiro.cadastrarPassageiro(pessoas);
                 salvarPessoas(pessoas, "pessoas.csv");
                 break;
             case 4:
-                cadastrarVoo(aeronaves, pessoas);
+                voo.cadastrarVoo(aeronaves, pessoas);
                 salvarVoosCSV();
                 break;
             case 5:
-                associarPassageiroAoVoo(pessoas);
+                voo.associarPassageiroAoVoo(pessoas);
                 break;
             case 6:
-                listarVoos();
+                voo.listarVoos();
                 break;
             case 7:
-                listarPassageirosDoVoo();
+                voo.listarPassageirosDoVoo();
                 break;
             case 8:
                 cout << "Funcionalidade de relatórios ainda não implementada.\n";
                 break;
             case 9:
+                aeronave.listarAeronaves(aeronaves); 
+                break;
+            case 10:
                 cout << "Saindo...\n";
                 break;
             default:

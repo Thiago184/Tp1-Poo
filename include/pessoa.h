@@ -3,6 +3,8 @@
 using namespace std;
 
 #include <string>
+#include <vector>
+#include <memory>
 
 class Pessoa {
 protected:
@@ -18,6 +20,7 @@ public:
     void setNome(const string& nome);
 
     virtual string toCSV() const = 0;
+
 };
 
 class Piloto : public Pessoa {
@@ -41,6 +44,8 @@ public:
 
     string toCSV() const override;
     static Piloto fromCSV(const string& linha);
+
+    void cadastrarPiloto(vector<shared_ptr<Pessoa>>&);
 };
 
 class Passageiro : public Pessoa {
@@ -60,6 +65,13 @@ public:
 
     string toCSV() const override;
     static Passageiro fromCSV(const string& linha);
+
+    void cadastrarPassageiro(vector<shared_ptr<Pessoa>>&);
 };
+
+
+void listarPessoas(const vector<shared_ptr<Pessoa>>&); //pessoa
+void salvarPessoas(const vector<shared_ptr<Pessoa>>&, const string&); 
+vector<shared_ptr<Pessoa>> carregarPessoas(const string& nomeArquivo);
 
 #endif

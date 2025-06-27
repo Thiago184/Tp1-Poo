@@ -29,12 +29,11 @@ void salvarPessoas(const vector<shared_ptr<Pessoa>>& lista, const string& nomeAr
     }
 }
 
-void cadastrarPiloto(vector<shared_ptr<Pessoa>>& lista) {
+void Piloto::cadastrarPiloto(vector<shared_ptr<Pessoa>>& lista) {
     string nome, matricula, breve;
     double horas;
 
     cout << "Nome: ";
-    cin.ignore();
     getline(cin, nome);
     cout << "Matrícula: ";
     getline(cin, matricula);
@@ -47,7 +46,7 @@ void cadastrarPiloto(vector<shared_ptr<Pessoa>>& lista) {
     cout << "Piloto cadastrado com sucesso!\n";
 }
 
-void cadastrarPassageiro(vector<shared_ptr<Pessoa>>& lista) {
+void Passageiro::cadastrarPassageiro(vector<shared_ptr<Pessoa>>& lista) {
     string nome, cpf, bilhete;
 
     cout << "Nome: ";
